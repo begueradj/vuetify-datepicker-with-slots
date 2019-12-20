@@ -1,9 +1,8 @@
 <template>
   <div>
-    <main>
-      <slot v-bind:myName="myName" />
-    </main>
+    <slot v-bind:myName="myName" />
     <p> Page component </p>
+    <slot name="begueradj" />
   </div>
 </template>
 
