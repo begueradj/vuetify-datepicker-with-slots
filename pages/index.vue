@@ -12,7 +12,14 @@
       <template v-slot="{avecNom, country } ">
         {{ country }}
       </template>
-    </named-slot-with-variable> -->
+    </named-slot-with-variable>
+    Correct way:
+    <named-slot-with-variable>
+  <template v-slot:withName=" { country } ">
+    {{ country }}
+  </template>
+</named-slot-with-variable>
+    -->
     <date-picker-slot>
       <template v-slot=" { dateFormatted } ">
         <v-btn> {{ dateFormatted }} </v-btn>
