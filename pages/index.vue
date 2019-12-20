@@ -3,10 +3,10 @@
     <page-component>
       <template v-slot="{ myName }">
         <v-btn> {{ myName }} </v-btn>
-        <h1> Some text </h1>
       </template>
       <template #begueradj>
-        Named slot
+        <date-picker-slot v-slot="{ dateFormatted }" />
+        <v-btn> {{ dateFormatted }} </v-btn>
       </template>
     </page-component>
   </div>
@@ -14,7 +14,9 @@
 
 <script>
 import PageComponent from '@/components/PageComponent.vue'
+import DatePickerSlot from '@/components/DatePickerSlot.vue'
+
 export default {
-  components: { PageComponent }
+  components: { PageComponent, DatePickerSlot }
 }
 </script>
