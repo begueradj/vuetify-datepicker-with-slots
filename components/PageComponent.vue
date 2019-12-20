@@ -1,8 +1,8 @@
 <template>
   <div>
     <slot v-bind:myName="myName" />
-    <p> Page component </p>
     <slot name="begueradj" />
+    <p> This belongs to page component and can not be modified by parent component </p>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   name: 'PageComponent',
   data () {
     return {
-      myName: 'Begueradj'
+      myName: 'Begueradj',
+      country: 'France'
     }
   }
 }

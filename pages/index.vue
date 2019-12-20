@@ -1,22 +1,32 @@
 <template>
   <div>
-    <page-component>
+    <!-- <page-component>
       <template v-slot="{ myName }">
         <v-btn> {{ myName }} </v-btn>
       </template>
       <template #begueradj>
-        <date-picker-slot v-slot="{ dateFormatted }" />
-        <v-btn> {{ dateFormatted }} </v-btn>
+        <p> Named slot in page component filled by parent component </p>
       </template>
     </page-component>
+    <named-slot-with-variable>
+      <template v-slot="{avecNom, country } ">
+        {{ country }}
+      </template>
+    </named-slot-with-variable> -->
+    <date-picker-slot>
+      <template v-slot=" { dateFormatted } ">
+        <v-btn> {{ dateFormatted }} </v-btn>
+      </template>
+    </date-picker-slot>
   </div>
 </template>
 
 <script>
-import PageComponent from '@/components/PageComponent.vue'
+// import PageComponent from '@/components/PageComponent.vue'
 import DatePickerSlot from '@/components/DatePickerSlot.vue'
+// import NamedSlotWithVariable from '@/components/NamedSlotWithVariable.vue'
 
 export default {
-  components: { PageComponent, DatePickerSlot }
+  components: { DatePickerSlot }
 }
 </script>
